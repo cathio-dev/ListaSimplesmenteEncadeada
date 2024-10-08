@@ -3,18 +3,18 @@
 
 int FlaviousJosephus(tp_listase **plista, int n, int k){
     tp_listase *atu, *ant;
-    atu = *plista;
-    ant = NULL;
     int pessoa;
 
     for(int i = 0; i < n; i++){ //2, 3, 4, 5, 1 . TESTE
-        printf("Digite o %d número: ", i + 1);
+        printf("Digite o %d numero: ", i + 1);
         scanf("%d", &pessoa);
         insere_listase_no_fim(plista, pessoa); //DUVIDA, plista já é ponteiro de ponteiro, e na funcao insere passamos o endereço do ponteiro, mas como plista ja tem um endereço do ponteiro, passamos só a PLISTA.
     }
 
     //primeira parte feita, preencher a lista.
     ///////////////////////////////////////////////
+    atu = *plista;
+    ant = NULL;
 
     while(atu-> prox != NULL){
         atu = atu -> prox; //quando prox for NULL, ele volta para o ultimo prox.
@@ -45,10 +45,10 @@ int main(){
     CirandaSuicidio = inicializa_listase();
     int N, GAP;
 
-    printf("Selecione o número de pessoas: ");
+    printf("Selecione o numero de pessoas: ");
     scanf("%d", &N);
 
-    printf("\nSelecione o número de saltos entre os suicídios: ");
+    printf("\nSelecione o numero de saltos entre os suicídios: ");
     scanf("%d", &GAP);
     printf("\n");
 
