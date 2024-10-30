@@ -11,7 +11,7 @@ struct tp_no_aux *prox;
 } tp_no;
 
 typedef struct {
-tp_no *topo;
+tp_no *topo; 
 } tp_pilha;
 
 tp_pilha *inicializa_pilha (){
