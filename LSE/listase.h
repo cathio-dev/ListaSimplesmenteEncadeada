@@ -118,7 +118,25 @@ void destroi_listase(tp_listase **plista){
 /*1 - Construa uma função que faça a inserção de um número inteiro em uma lista encadeada
 por ordem numérica.*/
 
-void insere_ordem_listase(tp_listase **plista, tp_itemLSE e){
+void insere_ordem_marcola(tp_listase **plista, tp_itemLSE e){
+    tp_listase *ant, *atu, *novo_no;
+    novo_no = aloca_listase();
+    novo_no->info = e;
+    
+    atu = *plista;
+    ant = NULL;
+
+    while((atu -> prox != NULL) && (atu->info < novo_no -> info)){
+        ant = atu;
+        atu = atu->prox;
+    }//quando sair, por ex 5 < 6; novo_no 
+
+    ant -> prox = novo_no;
+    novo_no -> prox = atu;
+
+}
+
+/*void insere_ordem_listase(tp_listase **plista, tp_itemLSE e){
     tp_listase *anterior, *atual, *novo_no;
     novo_no = aloca_listase();
     novo_no -> info = e; //info do novo nó será o número mandado. Alocaremos o nó, antes ou depois de outro nó.
@@ -136,7 +154,7 @@ void insere_ordem_listase(tp_listase **plista, tp_itemLSE e){
 
 
 
-}
+}*/
 
 
 
@@ -148,7 +166,7 @@ info com valores maiores do que n.*/
 int nos_maiores_n_listase(tp_listase *lista, int N){
     tp_listase *atual;
     int cont = 0;
-    atual = lista; //aponta para o primeir nó.
+    atual = lista; //aponta para o primeiro nó.
 
     while(atual != NULL){
         if(atual->info > N) cont++;

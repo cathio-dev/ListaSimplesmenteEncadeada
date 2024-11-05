@@ -8,7 +8,14 @@ int main(){
 
     lista = inicializa_listase(); //aponta para o endereço do inicializa, o conteúdo será NULL. //como se fizessemos lista = NULL.
     listaaux = inicializa_listase();
-    int N = 10;
+
+    insere_listase_no_fim(&lista, 3);
+    insere_listase_no_fim(&lista, 4);
+    insere_listase_no_fim(&lista, 6);
+    insere_ordem_marcola(&lista, 5);
+
+    imprime_listase(lista);
+    /*int N = 10;
     int contadorMaiores;
 
     insere_listase_no_fim(&lista, 10);
