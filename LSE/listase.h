@@ -265,5 +265,37 @@ int insere_no_inicio_listase(tp_listase **plista, tp_itemLSE e){
 
 }
 
+int bubblelista (tp_listase **l) {
+
+	tp_listase *ant,*atu;
+	tp_itemLSE aux1,aux2;
+	int tam;
+	tam=tamanhoListaSE(*l);
+
+	if(atu==NULL) {
+		return 0;
+	}
+//percorrer
+	for(int i=0; i<tam; i++) {
+		atu=*l;
+		ant=NULL;
+		while(atu->prox!=NULL) {
+			ant=atu;
+			atu=atu->prox;
+
+			if(ant->info>atu->info) {
+
+				aux1=ant->info;
+				aux2=atu->info;
+				atu->info=aux1;
+				ant->info=aux2;
+
+			}
+
+		}
+	}
+	return 1;
+}
+
 
 #endif
